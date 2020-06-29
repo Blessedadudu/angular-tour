@@ -1,0 +1,453 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+
+  .nav-links {
+    display: flex;
+    flex: 0 0 70%;
+    margin-right: 4rem;
+    justify-content: space-between;
+  }
+
+  .linkz {
+    list-style: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .linkz a:hover {
+    color: rgba(206, 205, 205, 0.753);
+    
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0a0a;
+    color: white;
+    font-weight: 600;
+  }
+
+
+  .toolbar img {
+    margin: 0 36px;
+    cursor: pointer;
+  }
+
+  .content {
+    padding: 8rem 10rem 0 10rem;
+  }
+
+  .card {
+      display: flex;
+      cursor: pointer;
+      padding-bottom: 3rem;
+  }
+
+
+
+  .card:hover .iconzz {
+      opacity: 1;
+  }
+
+  
+
+    .iconzz {
+        position: absolute;
+        opacity: 0;
+        padding:  .1rem .3rem;
+        border-radius: 2px;
+        transform: scaleX(1.3);
+        background-color: rgb(125, 197, 16);
+        transition: all .3s ease-in;
+        color: white;
+        font-weight: 24px;
+        font-weight: bold;
+        top: -1rem;
+        left: -3.5rem
+    
+    }
+
+  
+    .nav_checkbox + .nav_button .iconzz::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    .nav_checkbox:checked ~ .card1 {
+        display: none;
+    }
+
+    .nav_checkbox2:checked ~ .card2 {
+        display: none;
+    }
+
+    .nav_checkbox3:checked ~ .card3 {
+        display: none;
+    }
+
+    .nav_checkbox4:checked ~ .card4 {
+        display: none;
+    }
+
+  .card img {
+    width: 30vw;
+    height: 40vh;
+  }
+
+
+  .nav_checkbox {
+            display: none;
+            background-color: transparent;
+            margin-right: 3rem;        
+        }
+
+        .nav_button {
+            position: absolute;
+            top: 2rem;
+            left: 0rem;
+            border-radius: 50%;
+            z-index: 2000;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        /* ZA */
+
+        .nav_b {
+            position: relative;
+        }
+
+        .label {
+            position: relative;
+        }
+
+  .iconz {
+        position: relative;
+        /* margin-top: 3rem; */
+        top: -2.45rem;
+        left: 2.4rem;
+    
+        }
+ 
+    .iconz, .iconz::before, .iconz::after {
+            width: .8rem;
+            height: 1.2px;
+            background-color: rgb(0, 0, 0);
+            display: inline-block;
+
+        }
+
+        .iconz::before,
+            .iconz::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                transition: all .2s;
+            }
+
+            .iconz::before { top: -.2rem; }
+            .iconz::after { top: .2rem; }
+
+            .nav_checkbox:checked + .nav_button .iconz {
+            background-color: transparent;
+        }
+    
+    .nav_checkbox:checked + .nav_button .iconz::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    .nav_checkbox:checked + .nav_button .iconz::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    .explain {
+        opacity: 0;
+    }
+
+    .nav_checkbox:checked ~ .explain {
+        opacity: 1;
+    }
+
+    
+
+    .nav_dropdown {
+        opacity: 0;
+    }
+
+  .sidedetails {
+      
+      background-color: #ececec;
+      padding: .5rem 1rem;
+      position: relative;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1000px;
+    }
+
+    .card img {
+    width: 400px;
+    height: 40vh;
+  }
+  .sidedetails {
+      padding: .5rem 1rem;
+      position: relative;
+      width: 370px;
+
+  }
+
+  
+    .iconzz {
+        top: -18rem;
+        left: 10.5rem
+    
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .content {
+    padding: 8rem 1rem 0 1rem;
+  }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card img {
+    width: 360px;
+    height: 30vh;
+  }
+  .sidedetails {
+      padding: .5rem 1rem;
+      position: relative;
+      width: 330px;
+
+  }
+
+  
+    .iconzz {
+        font-weight: 24px;
+        font-weight: bold;
+        top: -13rem;
+        left: 9rem
+    
+    }
+
+}
+
+@media only screen and (min-height: 700px) {
+    .iconzz {
+        font-weight: 24px;
+        font-weight: bold;
+        top: -15rem;
+        left: 9rem
+    }
+}
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="120"
+    height= "120"
+    alt="city Logo"
+    src="assets/img/cityTour.svg"
+  />
+    <!-- <div class="spacer"></div> -->
+      <ul class="nav-links">
+        <li class="linkz">
+          <a href="/" target="_blank" rel="noopener" class="nav-link">
+            home
+          </a>
+        </li>
+        <li class="linkz">
+          <a href="/" target="_blank" rel="noopener" class="nav-link">
+            about
+          </a>
+        </li>
+        <li class="linkz">
+          <a href="/" target="_blank" rel="noopener" class="nav-link active">
+            tours
+          </a>
+        </li>
+      </ul>
+</div>
+
+<div class="content" role="main">
+    <!-- Card 1 -->
+    <input type="checkbox" class="nav_checkbox" id="navi-togg"/> 
+    
+    <div class='card card1'>
+        <img
+        alt="Lcc Logo"
+        src="assets/img/lcc.jpg"
+        />
+            <input type="checkbox" class="nav_checkbox" id="navi-togg"/> 
+            <label for="navi-togg" class="nav_button nav_b">
+                <span class="iconzz">X</span>
+            </label>
+        <div class='sidedetails'>
+            <h1>LEKKI CONSERVATION CENTRE</h1>
+            <h3>Lekki Conservation Tour</h3>
+            <p>info</p>
+            <div class="label">
+                <input type="checkbox" class="nav_checkbox" id="navi-toggle"/> 
+                    
+                <label for="navi-toggle" class="nav_button">
+                    <span class="iconz">&nbsp;</span>
+                </label>
+                <p class='explain'>Lekki Conservation Centre (LCC) has grown into one of Africa’s prominent and most-diverse urban Nature Parks due to its high species richness.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Card 2 -->
+    <input type="checkbox" class="nav_checkbox nav_checkbox2" id="navi-togg2"/> 
+    
+    <div class='card card2'>
+        <img
+        alt="Lcc Logo"
+        src="assets/img/tarkwa.jpeg"
+        />
+     <input type="checkbox" class="nav_checkbox" id="navi-togg2"/> 
+                     <!-- za -->
+            <label for="navi-togg2" class="nav_button nav_b">
+                <span class="iconzz">X</span>
+            </label>
+        <div class='sidedetails'>
+            <h1>LEKKI CONSERVATION CENTRE</h1>
+            <h3>Tarkwa Beach Tour</h3>
+            <p>info</p>
+            <div class="label">
+                <input type="checkbox" class="nav_checkbox" id="navi-toggle2"/> 
+                    
+                <label for="navi-toggle2" class="nav_button">
+                    <span class="iconz">&nbsp;</span>
+                </label>
+                <p class='explain explain2'>The blissful Tarkwa bay beach is one of the best resorts in Lagos, it is located some kilometers offshore away from the ever busy Lagos Island</p>
+            </div>
+           
+        </div>
+    </div>
+
+   
+    <!-- Card 3 -->
+    <input type="checkbox" class="nav_checkbox nav_checkbox3" id="navi-togg3"/> 
+    <div class='card card3'>
+        <img
+        alt="Lcc Logo"
+        src="assets/img/nike.jpg"
+        />
+     <input type="checkbox" class="nav_checkbox" id="navi-togg3"/> 
+                     <!-- za -->
+            <label for="navi-togg3" class="nav_button nav_b">
+                <span class="iconzz">X</span>
+            </label>
+                <div class='sidedetails'>
+                <h1>NIKE ART CENTER</h1>
+                <h3>Nike Art Center Tour</h3>
+                <p>info</p> 
+                  
+                <div class="label">
+                    <input type="checkbox" class="nav_checkbox" id="navi-toggle3"/> 
+                        
+                    <label for="navi-toggle3" class="nav_button">
+                        <span class="iconz">&nbsp;</span>
+                    </label>
+                    <p class='explain explain2'>Nike Art Gallery is Nigeria's leading art gallery and No.1 on Trip Advisor's list of top places to visit in Lagos, Nigeria.</p>
+                </div>
+        </div>
+    </div>
+   
+    <!-- Card 4 -->
+    <input type="checkbox" class="nav_checkbox nav_checkbox4" id="navi-togg4"/> 
+    
+    <div class='card card4'>
+        <img
+        alt="Lcc Logo"
+        src="assets/img/elegushi.jpg"
+        />
+     <input type="checkbox" class="nav_checkbox" id="navi-togg4"/> 
+            <label for="navi-togg4" class="nav_button nav_b">
+                <span class="iconzz">X</span>
+            </label>
+        <div class='sidedetails'>
+            <h1>ELEGUSHI BEACH</h1>
+            <h3>Elegushi Beach Tour</h3>
+            <p>info</p>
+            <div class="label">
+                <input type="checkbox" class="nav_checkbox" id="navi-toggle4"/> 
+                    
+                <label for="navi-toggle4" class="nav_button">
+                    <span class="iconz">&nbsp;</span>
+                </label>
+                <p class='explain'>Elegushi Beach is a private beach located at Lekki, Lagos state, southwest Nigeria. The beach is owned by the Elegushi royal family in Lekki, Lagos state.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
